@@ -3,19 +3,19 @@ const router = express.Router()
 const httperror = require('http-errors')
 const Product = require('../models/Reporter.info')
 
-router.get('/',async (req,res,next) => {
-    
-    try {
-        const result = await Product.find({} , {__v: 0})
-        if(!result){
-            throw httperror(404, "Database is empty..")
-        }
-        res.send(result)
-    } catch (error) {
-        console.log(error.message)
-    }
+// router.get('/',async (req,res,next) => {
 
-})
+//     try {
+//         const result = await Product.find({} , {__v: 0})
+//         if(!result){
+//             throw httperror(404, "Database is empty..")
+//         }
+//         res.send(result)
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+
+// })
 
 // router.post('/',async (req,res,next) => {
 
@@ -29,20 +29,20 @@ router.get('/',async (req,res,next) => {
 //     }
 // })
 
-// router.get('/:id',async (req,res,next) => {
+router.get('/:id',async (req,res,next) => {
 
-//     const id = req.params.id
-//     try {
-//         const result = await Product.findById(id)
-//         if(!result){
-//             throw httperror(404, "Invalid Id..")
-//         }
-//         res.send(result)
-//     } catch (error) {
-//         console.log(error.message)
-//         next(error)
-//     }
-// })
+    const phone = req.params.id
+    try {
+        const result = await Product.find({rnum : phone})
+        if(!result){
+            throw httperror(404, "Invalid Id..")
+        }
+        res.send(result)
+    } catch (error) {
+        console.log(error.message)
+        next(error)
+    }
+})
 
 
 // router.delete('/:id',async (req,res,next) => {
