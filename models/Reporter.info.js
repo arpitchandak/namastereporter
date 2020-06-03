@@ -2,40 +2,66 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const ReporterSchema = new Schema({
-    rname: {
+    id: {
+        type: String,
+        required: true,
+        unique: true
+
+    },
+    ng_address: {
+        type: String,
+        required: true,
+    },
+    ng_district:{
         type: String,
         required: true
     },
-    rnum: {
+    ng_email: {
         type: String,
         required: true,
         unique: true
     },
-    r_androidid: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    r_loc_lat: {
+    ng_name: {
         type: String,
         required: true
     },
-    r_loc_lon: {
+    ng_pageviews:{
+        type: Object
+    },
+    ng_phone_number: {
         type: String,
         required: true
     },
-    r_device: {
+    ng_schedular: {
         type: String,
         required: true
     },
-    r_carrier: {
+    ng_start_date: {
         type: String,
         required: true
     },
-    r_network: {
+    ng_state: {
         type: String,
         required: true
     },
+    ng_town:{
+        type: String,
+        required: true
+    },
+    ng_town_pin:{
+        type: String,
+        required: true
+    },
+    ng_type:{
+        type: String,
+        required: true
+    },
+    ng_updated_date:{
+        type: Number,
+        required: true
+    },
+
+    
 })
 
 const Reporter = mongoose.model('reporter',ReporterSchema)
