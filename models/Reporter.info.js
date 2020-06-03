@@ -2,65 +2,65 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const ReporterSchema = new Schema({
-    id: {
+    slug: {
         type: String,
         required: true,
         unique: true
 
     },
-    ng_address: {
+    content: {
         type: String,
         required: true,
     },
-    ng_district:{
+    image:{
         type: String,
         required: true
     },
-    ng_email: {
+    postid: {
         type: String,
         required: true,
         unique: true
     },
-    ng_name: {
+    report_by: {
         type: String,
         required: true
     },
-    ng_pageviews:{
-        type: Object
-    },
-    ng_phone_number: {
+    status: {
         type: String,
         required: true
     },
-    ng_schedular: {
+    tags: {
         type: String,
         required: true
     },
-    ng_start_date: {
+    title: {
         type: String,
         required: true
     },
-    ng_state: {
-        type: String,
-        required: true
-    },
-    ng_town:{
-        type: String,
-        required: true
-    },
-    ng_town_pin:{
-        type: String,
-        required: true
-    },
-    ng_type:{
-        type: String,
-        required: true
-    },
-    ng_updated_date:{
+    total_views: {
         type: Number,
         required: true
     },
-
+    updated_date:{
+        type: Number,
+        required: true
+    },
+    uploaded_by:{
+        type: String,
+        required: true
+    },
+    uploaded_date:{
+        type: Number,
+        required: true
+    },
+    total_claps:{
+        type: Number,
+        required: true
+    },
+    total_shares:{
+        type: Number,
+        required: true
+    }
     
 })
 

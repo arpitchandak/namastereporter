@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI,{
 .catch( err => console.log(err.message)) //jab apn nai network access mai koi whitelist ipaddress ya anywhere ip address nh idaala ho mongodb atlas database mai
 
 const ProductRoute = require('./routes/Reporter.check')
-app.use('/post_views',ProductRoute)
+app.use('/reporterinfo',ProductRoute)
 
 
 app.use((req,res,next) => {
